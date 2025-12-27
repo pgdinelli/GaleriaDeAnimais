@@ -9,7 +9,7 @@
             const response = await fetch(url);
             const data = await response.json();
             return data.message;
-        } catch (e) {
+        } catch {
             breed.textContent = `Erro ao pegar imagem`;
             return;
         }
@@ -20,7 +20,7 @@
             const data = await getImg();
             image.src = data;
             breed.textContent = data.split('/')[4];
-        } catch (error) {
+        } catch {
             return;
         }
     });
