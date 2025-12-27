@@ -2,6 +2,7 @@
     const image = document.querySelector('#image');
     const imgBtn = document.querySelector('#imgBtn');
     const breed = document.querySelector('#breed');
+    const gatosBtn = document.querySelector('#gatosBtn');
 
     async function getImg() {
         try {
@@ -23,6 +24,19 @@
         } catch {
             return;
         }
+    });
+
+    gatosBtn.addEventListener('click', async () => {
+        const response = await fetch('https://api.thecatapi.com/v1/images/search')
+        const data = await response.json();
+        const idResponse = await fetch('https://api.thecatapi.com/v1/breeds');
+        const dataId = await idResponse.json();
+        image.src = data[0].url;
+
+        //for(let )
+        console.log(data);
+        console.log(dataId)
+        //breed.textContent = data[0];
     });
 
 })();
