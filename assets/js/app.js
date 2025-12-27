@@ -1,7 +1,7 @@
 (function() {
-    const imageContainer = document.querySelector('.image-container');
     const image = document.querySelector('#image');
     const imgBtn = document.querySelector('#imgBtn');
+    const breed = document.querySelector('#breed');
 
     async function getImg(){
         const url = 'https://dog.ceo/api/breeds/image/random';
@@ -13,5 +13,6 @@
     imgBtn.addEventListener('click', async () => { 
         const data = await getImg();
         image.src = data;
+        breed.textContent = data.split('/')[4];
     });
 })();
