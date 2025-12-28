@@ -1,0 +1,29 @@
+{
+  "name": "dog-gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js --ignore index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgdinelli/Dog-Gallery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/pgdinelli/Dog-Gallery/issues"
+  },
+  "homepage": "https://github.com/pgdinelli/Dog-Gallery#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
