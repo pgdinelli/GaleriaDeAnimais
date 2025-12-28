@@ -31,7 +31,8 @@
             const data = await getImg();
             displayDogData(data);
         } catch (error) {
-            return error;
+            breed.textContent = 'Erro ao mostrar imagem do cachorro';
+            image.src = '';
         }
     });
 
@@ -41,7 +42,8 @@
             const data = await response.json();
             displayCatData(data);
         } catch (error) {
-            return error;
+            breed.textContent = 'Erro ao mostrar imagem do gato';
+            image.src = '';
         }
     });
 

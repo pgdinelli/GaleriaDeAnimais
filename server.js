@@ -14,7 +14,7 @@ app.get('/', async (req, res) => {
         const apiResponse = await axios.get(`https://api.thecatapi.com/v1/images/search/?has_breeds=1&api_key=${process.env.CAT_API_KEY}`);
         res.send(apiResponse.data);
     } catch (error) {
-        return error;
+        throw new Error('Erro ao receber resposta da API');
     }
      
 });
