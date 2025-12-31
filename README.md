@@ -116,6 +116,76 @@ Foi utilizada uma **IIFE** (Immediately Invoked Function Expression) para envolv
 
 As funções **displayDogData()** e **displayCatData()** são chamadas passando como argumento os dados que foram recebidos do backend, estas funções tem o simples objetivo de formatar os dados e exibir na tela. Desta forma, elas alteram o atributo "src" da tag "img" no HTML para que seja a url da imagem enviada pela API dos animais e também alteram o conteúdo do "h1" para que seja o nome da raça. Como a API de cães traz a raça na própria url, pegamos apenas este dado usando o método **split()** dividindo cada palavra que vem entre as barras "/" da url, a raça sempre vem na posição de índice 4. Já a API de gatos traz a raça de uma forma diferente, este dado vem dentro de um array de objetos contendo várias informações sobre peso, origem e temperamento do animal. Uma das chaves é o elemento "name" que tem como valor o nome da raça, logo foi necessário pegar apenas o índice deste atributo para exibir na página web.
 
+### Design reponsivo
+Também foi implementado responsividade a este projeto para que usuários possam acessar a aplicação através de Smartphones ou Tablets. Como as imagens podem vir de tamanhos variados, algumas podem vir bem maior e quebrar a página em telas menores causando uma rolagem horizontal. Para evitar este problema foi feito com que cada imagem nunca ultrapasse a largura total da tela do usuário, garantindo uma melhor experiência para quem acessar a página através de dispositivos móveis.
+
+<img width="676" height="887" alt="GaleriaAnimaisResponsivo" src="https://github.com/user-attachments/assets/16c3701e-c25e-4b5d-8809-c0ad963205e3" />
+
+Abaixo o trecho das Media Queries que foram implementadas no CSS com os respectivos breakpoints para tablets e smartphones.
+
+```
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .image-container {
+        width: 95vw;
+        height: auto;
+        min-height: 50vh;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        max-height: 45vh;
+    }
+
+    .image-container h1 {
+        width: 100%;
+        font-size: 32px;
+    }
+
+    .btn-container {
+        gap: 32px;
+        margin-top: 24px;
+    }
+
+    button {
+        width: 200px;
+        padding: 16px;
+        font-size: 19px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+     .image-container {
+        width: 95vw;
+        height: auto;
+        padding: 12px;
+    }
+
+    .image-container h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .image-container img {
+        max-height: 40vh;
+    }
+
+    .btn-container {
+        gap: 15px;
+        margin-top: 16px;
+    }
+
+    button {
+        width: 160px;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+```
+
+
 ## Tecnologias utilizadas
 - HTML, CSS e JavaScript
 - Node.js
