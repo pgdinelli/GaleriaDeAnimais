@@ -200,3 +200,31 @@ Abaixo o trecho das Media Queries que foram implementadas no CSS com os respecti
 - Cors
 - Sistema de rotas backend
 - Design reponsivo
+
+## Deploy da aplicação
+- [https://animalsgallery.vercel.app](https://animalsgallery.vercel.app)
+
+## Rodar a aplicação localmente
+Se deseja baixar os arquivos e rodar a aplicação em seu localhost, faça download da extensão **Live Server** no **VSCode**, abra o arquivo HTML, clique com o botão direito do mouse e vá em "Open with Live Server"
+
+<img width="652" height="817" alt="image" src="https://github.com/user-attachments/assets/08c7ca9a-4f10-4885-8da1-b6285f5f0787" />
+
+Depois abra o terminal do VSCode e digite o comando `npm install`. Uma pasta chamada **node_modules** deve aparecer no diretório de arquivos do projeto, agora vá novamente no terminal e digite `npm start` para iniciar o servidor local. Após isso a aplicação deverá funcionar perfeitamente no seu host local.
+
+### Possíveis problemas e soluções
+Normalmente o Live Server irá iniciar o Frontend na **porta 5500**, a porta que está sendo utilizada pode ser vista na url da página como: **http://127.0.0.1:5500** ou **http://localhost:5500** sempre depois do sinal de dois pontos ":"
+
+Em alguns casos pode acontecer do localhost ser iniciado em uma porta diferente e isto afetará o funcionamento da aplicação, impedindo que as respostas do backend cheguem ao frontend devido a um erro de **CORS**. Para consertar este problema abra o arquivo **server.js** e na seguinte linha:
+```
+app.use(cors({
+    origin: ['http://127.0.0.1:5500', 'http://localhost:5500', 'https://animalsgallery.vercel.app']
+}));
+```
+Altere qualquer uma das urls no trecho de código acima para a url que está rodando na sua máquina local, salve o arquivo e recarregue a página, o problema deve estar resolvido.
+
+## Autor do projeto
+Paulo Guilherme Souza Dinelli
+
+### Contato
+- Email: pgsdinelli@gmail.com
+- Linkedin: https://www.linkedin.com/in/paulodinelli/
